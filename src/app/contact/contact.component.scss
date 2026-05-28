@@ -261,18 +261,12 @@ textarea::placeholder {
     textarea::placeholder {
         color: #111111;
     }
+}
 
 
-    .phoneSection {
-        order: 1;
-    }
-
-    .mailSection {
-        order: 2;
-    }
-
-    .contactDescription {
-        order: 3;
+@media (max-width: 430px) {
+    .send button {
+        bottom: 0;
     }
 }
 
