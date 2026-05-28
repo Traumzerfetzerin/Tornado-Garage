@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ServiceComponent } from '../app/service/service.component';
 import { ContactComponent } from '../app/contact/contact.component';
+import { PolicyComponent } from './shared/policy/policy.component';
 // import AOS from 'aos';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -13,7 +14,8 @@ import { TranslateService } from '@ngx-translate/core';
     CommonModule,
     RouterOutlet,
     ServiceComponent,
-    ContactComponent],
+    ContactComponent,
+    PolicyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
