@@ -1,0 +1,320 @@
+.contact {
+    position: relative;
+
+    h1 {
+        font-size: clamp(30px, 4.5vw, 54px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #1A1A1A;
+    }
+}
+
+
+.contactContainer {
+    max-width: 1440px;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
+
+
+.contactContent {
+    gap: clamp(16px, 4vw, 36px);
+    padding: clamp(14px, 10vw, 200px);
+}
+
+
+.description {
+    font-size: clamp(16px, 1.6vw, 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mailImg,
+.phone {
+    width: clamp(18px, 3vw, 26.19px);
+    height: auto;
+}
+
+
+.contactInfo {
+    display: flex;
+    justify-content: center;
+}
+
+
+.mailSection,
+.phoneSection {
+    min-width: clamp(260px, 50vw, 445px);
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 3vw, 30px);
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    p:hover {
+        color: #89BCD9;
+    }
+}
+
+
+.formField {
+    gap: clamp(10px, 2vw, 21px);
+    flex-direction: column;
+    display: block;
+    padding-inline: clamp(14px, 10vw, 200px);
+}
+
+
+.contactField {
+    gap: 21px
+}
+
+
+.name,
+.mail {
+    input {
+        width: 100%;
+        height: 60px;
+        border-radius: 30px;
+        border: 1px #DDDDDD solid;
+        background-color: #FFFFFF;
+        padding-left: 8px;
+        color: #111111;
+    }
+
+    input:focus {
+        border: 1px #AE0509 solid;
+        caret-color: #111111;
+        outline: none;
+        padding-left: 8px;
+        box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.15);
+    }
+}
+
+
+.name,
+.mail,
+.message {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: clamp(16px, 1.2vw, 20px);
+    }
+}
+
+
+.message {
+    textarea {
+        width: 100%;
+        height: 146.63px;
+        border-radius: 30px;
+        border: 1px #DDDDDD solid;
+        background-color: #FFFFFF;
+        padding: 16px 8px;
+        color: #111111;
+    }
+
+    textarea:focus {
+        border: 1px #AE0509 solid;
+        color: #111111;
+        outline: none;
+        padding: 16px 8px;
+        box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.15);
+    }
+}
+
+
+.fieldWrapper small {
+    color: #FF5A5A;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.errorMessage {
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.policy {
+    align-items: center;
+    margin: clamp(20px, 5vw, 50px);
+    padding-bottom: 10px;
+
+    span {
+        flex-wrap: wrap;
+    }
+
+    a {
+        margin: 0 4px;
+    }
+}
+
+
+.send button {
+    width: clamp(90px, 15vw, 101px);
+    height: clamp(40px, 6vw, 48px);
+    border-radius: 30px;
+    border: 1px solid #F8F5EC;
+    background: #AE0509;
+    font-size: clamp(16px, 2vw, 20px);
+    position: absolute;
+    right: 30px;
+    color: #FFFFFF;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+}
+
+
+.send button.active {
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+
+.customCheckbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: relative;
+        width: 22px;
+        height: 19.1px;
+        top: -1.87px;
+        left: -2.36px;
+        border: 2px solid #AE0509;
+        border-radius: 50% / 40%;
+        background-color: transparent;
+        transition: 0.3s;
+        flex-shrink: 0;
+    }
+
+    .checkmark::after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 6px;
+        width: 6px;
+        height: 12px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    input:checked~.checkmark {
+        background-color: #AE0509;
+        border-color: #AE0509;
+    }
+
+    input:checked~.checkmark::after {
+        display: block;
+    }
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color: transparent;
+}
+
+
+.succesMessage,
+.errorMessageSendMail {
+    height: 50vh;
+    width: 100%;
+    background-color: #2ECC71;
+    border: 1px solid #28A745;
+    border-radius: 10px;
+    padding: 24px;
+    z-index: 100;
+    position: absolute;
+    font-size: clamp(16px, 2vw, 20px);
+    color: #FFFFFF;
+}
+
+
+
+// MEDIA QUERIES
+@media (max-width: 1130px) {
+
+    .contactContent,
+    .formField {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .formField {
+        display: flex;
+        padding: 10px;
+    }
+
+    .name,
+    .mail,
+    .message {
+        width: 90vw;
+        padding-inline: clamp(16px, 5vw, 50px);
+
+        p {
+            display: none;
+        }
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #111111;
+    }
+
+
+    .phoneSection {
+        order: 1;
+    }
+
+    .mailSection {
+        order: 2;
+    }
+
+    .contactDescription {
+        order: 3;
+    }
+}
+
+
+@media (max-width: 340px) {
+    .formField {
+        padding: 0px;
+    }
+
+    .contactContent {
+        padding: 14px;
+    }
+}

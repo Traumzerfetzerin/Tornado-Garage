@@ -1,0 +1,89 @@
+<div class="contactContainer">
+
+    <div class="succesMessage" *ngIf="showSuccessMessage">
+        {{ 'contact.successMessage' | translate }}
+    </div>
+
+    <div class="errorMessageSendMail" *ngIf="showErrorMessage">
+        {{ 'contact.errorMessage' | translate }}
+    </div>
+
+    <div class="contact">
+        <h1 class="">Kontakt</h1>
+        <div class="contactContent">
+
+            <div class="contactDescription">
+                <span class="description">
+                    Bitte füllen Sie das folgende Kontaktformular vollständig aus und teilen Sie uns Ihr Anliegen mit.
+                    <br>
+                    So können wir Ihre Anfrage schnell und gezielt bearbeiten.
+                </span>
+            </div>
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contactField" data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom">
+                <div class="formField fieldWrapper">
+                    <div class="name">
+                        <p class="">Name</p>
+                        <input type="text" formControlName="name" placeholder="Ihr Name" class="">
+                        <div class="errorMessage">
+                            <small *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+                                Name erforderlich
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="mail fieldWrapper">
+                        <p class="">Telefon</p>
+                        <input type="tel" formControlName="phone" placeholder="Ihre Telefonnummer" class="">
+                        <div class="errorMessage">
+                            <small *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">
+                                Telefonnummer erforderlich
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="mail fieldWrapper">
+                        <p class="">E-Mail</p>
+                        <input type="email" formControlName="email" placeholder="Ihre E-Mail-Adresse" class="">
+                        <div class="errorMessage">
+                            <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+                                E-Mail erforderlich
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="message fieldWrapper">
+                        <p class="">Nachricht</p>
+                        <textarea formControlName="message" placeholder="Ihre Nachricht" class=""></textarea>
+                        <div class="errorMessage">
+                            <small *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+                                Nachricht erforderlich
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="policy flex">
+                    <label class="customCheckbox">
+                        <input type="checkbox" formControlName="acceptPolicy">
+                        <span class="checkmark"></span>
+                        <span class="">
+                            Ich habe die
+                            <a [routerLink]="'/police'" class="">
+                                Datenschutzbestimmungen
+                            </a>
+                            gelesen und stimme der Verarbeitung meiner Daten zu, wie sie in der Datenschutzerklärung
+                            beschrieben sind.
+                        </span>
+                    </label>
+                </div>
+
+                <div class="send">
+                    <button type="submit" [disabled]="!contactForm.valid" [class.active]="contactForm.valid">
+                        Senden
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
