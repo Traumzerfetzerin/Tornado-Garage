@@ -33,40 +33,6 @@
 }
 
 
-.mailImg,
-.phone {
-    width: clamp(18px, 3vw, 26.19px);
-    height: auto;
-}
-
-
-.contactInfo {
-    display: flex;
-    justify-content: center;
-}
-
-
-.mailSection,
-.phoneSection {
-    min-width: clamp(260px, 50vw, 445px);
-    display: flex;
-    align-items: center;
-    gap: clamp(12px, 3vw, 30px);
-
-    a {
-        text-decoration: none;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    p:hover {
-        color: #89BCD9;
-    }
-}
-
-
 .formField {
     gap: clamp(10px, 2vw, 21px);
     flex-direction: column;
@@ -162,6 +128,8 @@
 
     a {
         margin: 0 4px;
+        text-decoration: none;
+        color: #AE0509;
     }
 }
 
