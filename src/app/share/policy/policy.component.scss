@@ -1,6 +1,6 @@
     h1 {
         font-size: clamp(25px, 5vw, 54px);
-        padding-bottom: 50px;
+        // padding-bottom: 50px;
     }
 
 
@@ -26,4 +26,11 @@
 
     .police {
         width: 100%;
+    }
+
+
+    .line {
+        p {
+            margin: 0;
+        }
     }
